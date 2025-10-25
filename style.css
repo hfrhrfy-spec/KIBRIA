@@ -1,0 +1,163 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: url('https://i.postimg.cc/KztKJ63p/c863c62bcdaa5bc68e4b462a2b1b1709.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh; overflow: hidden;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+    font-family: sans-serif; color: white;
+}
+
+/* উপরের প্রিমিয়াম ফ্রেম */
+#topFrame {
+    position: absolute;
+    top: 30px;
+    padding: 15px 30px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    font-weight: 900;         
+    font-size: 28px;          
+    letter-spacing: 0px;
+    color: transparent;             
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: colorChange 2s infinite linear;
+    background-image: linear-gradient(90deg, #00ff00, #00ffff, #ff69b4, #ffff00, #00ff00);
+    background-size: 400% 400%;
+    text-align: center;
+}
+
+@keyframes colorChange {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ছবির এনিমেশন */
+#cartoon {
+    width: 180px;
+    border-radius: 10%;
+    position: absolute;
+    top: -200px;
+    animation: fall 2.5s ease-out forwards, bounce 0.8s 2.5s ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes fall {
+    0% { top: -200px; opacity: 0; }
+    80% { top: 60%; opacity: 1; }
+    100% { top: 50%; }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-20px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* লগইন পেজ */
+#loginPage {
+    display: none;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.1);
+    animation: fadeIn 1s ease forwards;
+}
+
+/* লগইন হেডিং প্রিমিয়াম কালার/গ্রেডিয়েন্ট */
+#loginHeader {
+    font-weight: 900;         
+    font-size: 28px;          
+    letter-spacing: 0px;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: colorChange 2s infinite linear;
+    background-image: linear-gradient(90deg, #00ff00, #00ffff, #ff69b4, #ffff00, #00ff00);
+    background-size: 400% 400%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#loginPage input {
+    width: 220px; padding: 10px; margin: 10px 0; border: none; border-radius: 10px;
+    text-align: center; background: rgba(255,255,255,0.1); color: white; font-size: 16px;
+}
+#loginPage input::placeholder { color: #ccc; }
+
+#loginPage button {
+    width: 240px; padding: 10px; background: linear-gradient(45deg, #00ffcc, #0066ff);
+    border: none; border-radius: 10px; color: black; font-weight: bold; font-size: 16px;
+    cursor: pointer; transition: transform 0.2s ease, box-shadow 0.3s;
+}
+#loginPage button:hover { transform: scale(1.05); box-shadow: 0 0 15px #00ffff; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); }
+}
+
+.fade-out { animation: fadeOut 1s forwards; }
+@keyframes fadeOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.5); } }
+
+/* error message */
+#errorMsg {
+    color: #ff6b6b;
+    margin-bottom: 8px;
+    min-height: 20px;
+    font-weight: 600;
+}
+
+/* ড্যাশবোর্ড */
+#dashboard {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    color: white;
+    width: 80%;  
+    max-width: 600px;
+}
+#dashboard p { 
+    margin-bottom: 18px; 
+    color: #cde; 
+    font-size: 20px;
+    font-weight: 500; 
+    line-height: 1.6;
+}
+
+/* WhatsApp বাটন চ্যাপ্টা / স্ট্রেচড */
+#whatsappBtn {
+    background: #25D366;
+    border: none;
+    border-radius: 12px; 
+    width: 100%; 
+    max-width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s;
+    margin: 20px auto 0 auto; 
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+#whatsappBtn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px #25D366;
+}
+#whatsappBtn img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px; 
+}
